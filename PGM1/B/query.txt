@@ -9,7 +9,7 @@ CREATE TABLE employee (emp_no VARCHAR(12) PRIMARY KEY,emp_name VARCHAR(26),dob D
 SHOW TABLES;
 
 DESCRIBE employee;
-DESCRIBE department;
+DESCRIBE department; 
 
 ALTER TABLE employee
 ADD designation VARCHAR(30);
