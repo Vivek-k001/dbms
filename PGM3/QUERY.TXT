@@ -14,11 +14,11 @@ INSERT INTO department (dept_no, dept_name) VALUES
 INSERT INTO employee (emp_no, emp_name, mobile_no, salary, dept_no, designation) VALUES
 ('E001', 'Rinshad', 987650001, 30000, 'D01', 'Manager'),
 ('E002', 'Mishal',  987650002, 32000, 'D01', 'Assistant Manager'),
-('E003', 'Fidha',   987650003, 28000, 'D02', 'Accountant'),
+('E003', 'Fidha',   987650003, 18000, 'D02', 'Accountant'),
 ('E004', 'Mizba',   987650004, 35000, 'D02', 'Senior Accountant'),
 ('E005', 'Rishin',  987650005, 40000, 'D03', 'Software Engineer'),
-('E006', 'Jasna',   987650006, 36000, 'D01', 'HR Executive'),
-('E007', 'Nidha',   987650007, 29000, 'D03', 'System Analyst'),
+('E006', 'Jasna',   987650006, 16000, 'D01', 'HR Executive'),
+('E007', 'Nidha',   987650007, 19000, 'D03', 'System Analyst'),
 ('E008', 'Sadha',   987650008, 31000, 'D02', 'Finance Executive'),
 ('E009', 'Anjum',   987650009, 33000, 'D01', 'Admin Officer'),
 ('E010', 'Ameena',  987650010, 45000, 'D03', 'Team Lead');
