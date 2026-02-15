@@ -48,7 +48,7 @@ UPDATE employee SET mobile_no = 987650111 WHERE emp_name = 'Rinshad';
 DELETE FROM employee WHERE salary = 2500;
 
 
-SELECT emp_name, mobile_noFROM employee WHERE emp_name LIKE 'A%';
+SELECT emp_name, mobile_no FROM employee WHERE emp_name LIKE 'A%';
 
 
 SELECT * FROM employee WHERE LENGTH(emp_name) >= 3 AND salary > 30000;
