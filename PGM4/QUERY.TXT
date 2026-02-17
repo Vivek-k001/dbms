@@ -1,0 +1,12 @@
+CREATE TABLE regions (region_id INT PRIMARY KEY,region_name VARCHAR(50) NOT NULL);
+
+CREATE TABLE countries (country_id VARCHAR(5) PRIMARY KEY,country_name VARCHAR(50) NOT NULL,region_id INT,FOREIGN KEY (region_id) REFERENCES regions(region_id));
+
+CREATE TABLE locations (location_id INT PRIMARY KEY,street_address VARCHAR(100),postal_code VARCHAR(20),city VARCHAR(50),state_province VARCHAR(50),country_id VARCHAR(5),FOREIGN KEY (country_id) REFERENCES countries(country_id));
+
+CREATE TABLE departments (dept_id INT PRIMARY KEY,dept_name VARCHAR(50) NOT NULL,location_id INT,FOREIGN KEY (location_id) REFERENCES locations(location_id));
+
+CREATE TABLE employees (employee_id INT PRIMARY KEY,first_name VARCHAR(50),last_name VARCHAR(50),email VARCHAR(100),phone_no VARCHAR(20),hire_date DATE,job_id VARCHAR(10),salary DECIMAL(10, 2),manager_id INT,dept_id INT,FOREIGN KEY (manager_id) REFERENCES employees(employee_id),FOREIGN KEY (dept_id) REFERENCES departments(dept_id));
+
+CREATE TABLE dependents (dependent_id INT PRIMARY KEY,first_name VARCHAR(50),last_name VARCHAR(30),relationship VARCHAR(30),employee_id INT,FOREIGN KEY (employee_id) REFERENCES employees(employee_id));
+
