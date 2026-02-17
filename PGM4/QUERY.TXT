@@ -13,3 +13,21 @@ CREATE TABLE departments (dept_id INT PRIMARY KEY,dept_name VARCHAR(50) NOT NULL
 CREATE TABLE employees (employee_id INT PRIMARY KEY,first_name VARCHAR(50),last_name VARCHAR(50),email VARCHAR(100),phone_no VARCHAR(20),hire_date DATE,job_id VARCHAR(10),salary DECIMAL(10, 2),manager_id INT,dept_id INT,FOREIGN KEY (manager_id) REFERENCES employees(employee_id),FOREIGN KEY (dept_id) REFERENCES departments(dept_id));
 
 CREATE TABLE dependents (dependent_id INT PRIMARY KEY,first_name VARCHAR(50),last_name VARCHAR(30),relationship VARCHAR(30),employee_id INT,FOREIGN KEY (employee_id) REFERENCES employees(employee_id));
+
+INSERT INTO regions VALUES 
+(1, 'Asia'),
+(2, 'Europe');
+
+INSERT INTO countries VALUES 
+('IN', 'India', 1),
+('UK', 'United Kingdom', 2);
+
+INSERT INTO locations VALUES 
+(1700, 'MG Road', '56000', 'Bangalore', 'Karnataka', 'IN'),
+(1800, 'Oxford Street', 'W1', 'London', 'London', 'UK');
+
+INSERT INTO departments VALUES 
+(1, 'IT', 1700),
+(2, 'HR', 1700),
+(3, 'Finance', 1800),
+(4, 'Marketing', 1800);
