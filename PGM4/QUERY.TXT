@@ -38,3 +38,10 @@ INSERT INTO employees VALUES (101, 'Rahul', 'Sharma', 'rahul@gmail.com', 999991,
 (105, 'David', 'Brown', 'david@gmail.com', 999995, '2022-05-20', 'mkt_man', 22000, 103, 4);
 
 INSERT INTO dependent VALUES (1, 'Anu', 'Sharma', 'Daughter', 101),(2, 'Sara', 'Khan', 'Wife', 102);
+
+
+SELECT first_name, last_name FROM employees JOIN departments USING (dept_id) WHERE location_id = 1700;
+
+SELECT first_name, last_name FROM employees JOIN departments USING (dept_id) WHERE location_id <> 1700;
+
+SELECT * FROM employees WHERE salary = (SELECT MAX(salary) FROM employees);
