@@ -28,8 +28,6 @@ INSERT INTO locations VALUES (1700, 'MG Road', '56000', 'Bangalore', 'Karnataka'
 INSERT INTO departments VALUES (1, 'IT', 1700),(2, 'HR', 1700),(3, 'Finance', 1800),(4, 'Marketing', 1800);
 
 
-
-
 INSERT INTO job VALUES ('it_prog', 'Programmer', 5000, 20000),('hr_rep', 'HR Representative', 4000, 15000),
 ('fin_acc', 'Accountant', 6000, 18000),('mkt_man', 'Marketing Manager', 8000, 25000);
 
