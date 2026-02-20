@@ -45,3 +45,25 @@ SELECT first_name, last_name FROM employees JOIN departments USING (dept_id) WHE
 SELECT first_name, last_name FROM employees JOIN departments USING (dept_id) WHERE location_id <> 1700;
 
 SELECT * FROM employees WHERE salary = (SELECT MAX(salary) FROM employees);
+
+
+
+select * from employees where salary > (Select avg(salry?)) from employees);
+
+select distrit dept_id , dept_name from departments join employees using (dept_id) wheere salary > 1000;
+
+select dept_id , dept_name from depatrtmnets where dept_id not in (seelct dept_id from employees wwere salary >  1000);
+
+select * from employrees where slary > al (select min (salary) from employees group by  dept_id);
+
+select & from employeesd where slary >= all (select max(salary)from employees grioup by dept_id;
+
+select avg(avg_salary) from (select avg (salary ) as avg_salary from employeeesd group by dept_id) as dept_avg);
+
+select firsT_name , salary , (select avg(salary)from employees) as avbg_salary , salary -(select avg (salary) from employees) as difference from emplpoyees;
+
+select * from employees where salarey > (select avg (salary ) from employees where dept_id = e.dept_id);
+
+select * from employees where not exists (select  * from dependents where dependentrs employee_id = employees.employemtn);
+
+select e.first , e.last_name , d.dept_name from employee e join department d
