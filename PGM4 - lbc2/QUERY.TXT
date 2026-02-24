@@ -37,7 +37,7 @@ INSERT INTO employees VALUES (101, 'Rahul', 'Sharma', 'rahul@gmail.com', 999991,
 (104, 'Priya', 'Nair', 'priya@gmail.com', 999994, '2023-04-18', 'it_prog', 7000, 101, 1),
 (105, 'David', 'Brown', 'david@gmail.com', 999995, '2022-05-20', 'mkt_man', 22000, 103, 4);
 
-INSERT INTO dependent VALUES (1, 'Anu', 'Sharma', 'Daughter', 101),(2, 'Sara', 'Khan', 'Wife', 102);
+INSERT INTO dependents VALUES (1, 'Anu', 'Sharma', 'Daughter', 101),(2, 'Sara', 'Khan', 'Wife', 102);
 
 
 SELECT first_name, last_name FROM employees JOIN departments USING (dept_id) WHERE location_id = 1700;
@@ -62,4 +62,23 @@ SELECT first_name, salary, (SELECT AVG(salary) FROM employees) AS avg_salary, sa
 
 SELECT * FROM employees e WHERE salary > (SELECT AVG(salary) FROM employees WHERE dept_id = e.dept_id);
 
+
 SELECT * FROM employees e WHERE NOT EXISTS (SELECT * FROM dependents d WHERE d.employee_id = e.employee_id);
+
+SELECT e.first_name,e.last_name,d.department_name FROM employees e JOIN departments d ON e.department_id = d.department_id WHERE e.department_id IN (1,2,3);
+
+SELECT e.first_name,e.last_name,j.job_title,d.department_name FROM employees e JOIN jobs j ON e.job_id = j.job_id JOIN departments d ON e.department_id = d.department_id WHERE e.department_id IN (1, 2, 3) AND e.salary > 100000;
+
+SELECT d.department_name,l.street_address,l.postal_code,c.country_name,r.region_name FROM departments d JOIN locations l ON d.location_id = l.location_id JOIN countries c ON l.country_id = c.country_id JOIN regions r ON c.region_id = r.region_id;
+
+SELECT e.first_name, e.last_name, e.department_id, d.department_name
+FROM employees e LEFT JOIN departments d ON e.department_id = d.department_id; 
+
+
+
+
+
+SELECT e.first_name, e.last_name, d.department_name, l.city, l.state_province FROM employees e JOIN departments d ON e.department_id = d.department_id JOIN locations l ON d.location_id = l.location_id WHERE e.first_name LIKE '%z%';
+
+
+
