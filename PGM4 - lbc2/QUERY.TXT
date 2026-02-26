@@ -97,3 +97,7 @@ SELECT first_name FROM delhi_emp WHERE job_title='Marketing Manager' AND dept_na
 UPDATE employees SET phone_no='99999' WHERE first_name='John';
 
 SELECT * FROM employees e WHERE NOT EXISTS (SELECT * FROM dependents d WHERE d.employee_id=e.employee_id);
+
+SELECT * FROM employees WHERE manager_id = 101 UNION SELECT * FROM employees WHERE manager_id = 201;
+
+SELECT * FROM employees e WHERE EXISTS (SELECT * FROM dependents d WHERE d.employee_id = e.employee_id);
