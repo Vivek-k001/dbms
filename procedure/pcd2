@@ -1,0 +1,19 @@
+DELIMITER //
+
+CREATE PROCEDURE customer_details(
+    IN cname VARCHAR(50)
+)
+
+BEGIN
+
+SELECT *
+FROM customer
+WHERE name = cname;
+
+END //
+
+DELIMITER ;
+
+
+
+CALL customer_details('rahul');

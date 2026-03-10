@@ -1,0 +1,30 @@
+DELIMITER //
+
+CREATE PROCEDURE withdraw_amount(
+    IN acc_id INT,
+    IN amt INT
+)
+BEGIN
+    DECLARE bal INT;
+
+    SELECT balance INTO bal
+    FROM account
+    WHERE account_id = acc_id;
+
+    IF bal IS NULL THEN
+        SELECT 'account does not exist' AS Message;
+
+    ELSEIF (bal - amt) < 1000 THEN
+        SELECT 'Withdraw not allowed. Minimum balance must be 1000' AS Message;
+
+    ELSE
+        UPDATE account
+        SET balance = balance - amt
+        WHERE account_id = acc_id;
+
+        SELECT 'Withdrawal successful' AS Message;
+    END IF;
+
+END //
+
+DELIMITER ;

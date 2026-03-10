@@ -1,0 +1,13 @@
+CREATE DATABASE exp5_edb;
+USE exp5_edb;
+
+CREATE TABLE account (
+    account_id INT PRIMARY KEY,
+    balance INT
+);
+
+INSERT INTO account VALUES
+(101, 5000),
+(102, 3000),
+(103, 1200);
+
