@@ -1,0 +1,18 @@
+CREATE TABLE bill (
+customer_id INT PRIMARY KEY,
+name VARCHAR(50),
+pre_reading INT,
+cur_reading INT,
+unit INT,
+amount DECIMAL(10,2)
+);
+
+
+INSERT INTO bill VALUES
+(1,'Arun',100,180,NULL,NULL),
+(2,'Rahul',200,320,NULL,NULL),
+(3,'Meera',150,240,NULL,NULL),
+(4,'Anu',300,450,NULL,NULL);
+
+
+CALL calculate_bill();
